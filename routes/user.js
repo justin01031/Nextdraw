@@ -13,5 +13,5 @@ exports.search=function(req,res,next){
 	console.log(req.query.keyword);
 	if(!req.query.keyword) throw new Error('no keyword');
 	//res.send(req.query.keyword);
-	res.render('search', {});
+	res.render('search', {keyword : req.query.keyword});
 	}
