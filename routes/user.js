@@ -19,6 +19,7 @@ exports.search=function(req,res,next){
 	
  	request(url, function (error, response, body) {
  		var $body=$(body);
+ 		
  		//console.log($body.find(".browseEntryData").text());
  		res.render('search', {keyword : req.query.keyword, data:$body.find(".briefcitTitleonly").text()});
  	});
