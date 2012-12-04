@@ -5,8 +5,7 @@ body {
 a {
   color: #00B7FF;
 }
-.nav{
+.nav a{
 
-	  color: "red";
-}
+	  color: blue;
 }
