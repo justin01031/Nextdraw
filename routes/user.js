@@ -10,13 +10,15 @@ exports.list = function(req, res){
 // exports.search = function(req, res){
 // 	res.send("hello");
 // }
+
 exports.search=function(req,res,next){
 	//console.log(req.query.keyword);
 	if(!req.query.keyword) throw new Error('no keyword');
 	//res.send(req.query.keyword);
+
 	var url="http://tulips.ntu.edu.tw/search*cht/X?SEARCH="+req.query.keyword+"&searchscope=5";
 	//console.log(url);
-
+	
  	request(url, function (error, response, body) {
  		var $body=$(body);
 
@@ -69,3 +71,4 @@ exports.search=function(req,res,next){
  	});
 
 	}
+	
