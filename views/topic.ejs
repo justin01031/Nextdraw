@@ -4,7 +4,19 @@
     <link href="./css/bootstrap.css" rel="stylesheet" media="screen">
   </head>
   <body>
-  	testtest
+  	 <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+
+	<form method='post' action='/upload' ENCTYPE="multipart/form-data" >
+		<input type='file' name='file' />
+		<input type='text' name='title' placeholder='輸入comment' />
+		<button>送出</button>
+	</form>
+
+	<% for(var k in database) { %>
+		<img src='/upload/<%= k %>'></img><h5><%= database[k].title %></h5> <br>
+	<% } %>
+
        <!-- Scripts -->
   <script type="text/javascript" src="./javascripts/jquery.min.js">  ​</script>
   <script type="text/javascript" src="./javascripts/jquery-ui.min.js"> </script>

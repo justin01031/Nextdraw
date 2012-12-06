@@ -2,6 +2,9 @@
 /*
  * GET users listing.
  */
+ var database = {};
+var prefix ="C:\\Users\\asus\\Nextdraw\\public\\upload"
+console.log(__dirname);
 var request = require('request'),
 $ = require('jQuery');
 exports.list = function(req, res){
@@ -10,7 +13,22 @@ exports.list = function(req, res){
 // exports.search = function(req, res){
 // 	res.send("hello");
 // }
+exports.topic=function(req, res, next) {
+	res.render('topic', {
+		title : 'Simple File Host Service'
+		, database : database
+	});
+}
+exports.upload=function(req, res, next) {
+		//if(!req.body.title) throw new Error('no title');
+				console.log(req.files.file.path);
+		database[req.files.file.path.replace(prefix,'')] = {
+				title : req.body.title
+		};
 
+		console.log(database);
+		res.redirect('/topic');
+}
 exports.search=function(req,res,next){
 	//console.log(req.query.keyword);
 	if(!req.query.keyword) throw new Error('no keyword');
