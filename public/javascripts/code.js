@@ -5,9 +5,10 @@ $('.animateMe').each(function(){
 			.animate(
 			{
 				opacity: 100,
-				
+				top:    0
 			},
 			'slow',
 			function(){$(this).show();}
 				);
 		});
+$('#hide').css("opacity","0");;
