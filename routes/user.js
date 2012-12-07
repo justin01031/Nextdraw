@@ -4,9 +4,10 @@
  */
  var database = {};
 var prefix ="C:\\Users\\asus\\Nextdraw\\public\\upload"
-console.log(__dirname);
+
 var request = require('request'),
 $ = require('jQuery');
+
 exports.list = function(req, res){
   res.send("respond with a resource");
 };
@@ -20,8 +21,9 @@ exports.topic=function(req, res, next) {
 	});
 }
 exports.upload=function(req, res, next) {
-		//if(!req.body.title) throw new Error('no title');
-				console.log(req.files.file.path);
+	console.log(req.files.file.name);
+		if(req.files.file.name=='') throw new Error('no pitcure');
+				
 		database[req.files.file.path.replace(prefix,'')] = {
 				title : req.body.title
 		};
