@@ -15,11 +15,11 @@ fjs.parentNode.insertBefore(js, fjs);
   	 <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
 
-  <% for(var k in database) { %>
+ <!--  <% for(var k in database) { %>
     <img src='/upload/<%= k %>'></img> 
     <fb:comments href="http://localhost:3000//upload/<%= k %>" num_posts="5" ></fb:comments>
     <br>
-  <% } %>
+  <% } %> -->
 
        <!-- Scripts -->
  
@@ -28,7 +28,7 @@ fjs.parentNode.insertBefore(js, fjs);
 <!--		<input type='text' name='title' placeholder='輸入comment' />-->
 		<button>送出</button>
 	</form>
-<fb:comments href="http://localhost:3000/topic" num_posts="5" ></fb:comments>
+
  <script type="text/javascript" src="./javascripts/jquery.min.js">  ​</script>
   <script type="text/javascript" src="./javascripts/jquery-ui.min.js"> </script>
   <script type="text/javascript" src="./javascripts/code.js"></script>
@@ -52,14 +52,20 @@ img,a{border:0;}
 <div class="scrollcon">
 <div id="boximg" class="scrollpic">
 <ul>
-    <li><a href="http://www.jsfoot.com/"><img width="132" height="91" alt="哈尔滨市哈南工业新城核心区概念城市设计" src="scroll/images/20110627024506_0.jpg" /><br />
+   <% for(var k in database) { %>
+   <li><a><img width="132" height="91" src='/upload/<%= k %>' /><br />
+    </a></li>
+    
+    <br>
+  <% } %>
+<!--     <li><a href="http://www.jsfoot.com/"><img width="132" height="91" alt="哈尔滨市哈南工业新城核心区概念城市设计" src="scroll/images/20110627024506_0.jpg" /><br />
     哈尔滨市哈南工业新城核心区概念城市设计</a></li>
     <li><a href="http://www.jsfoot.com/"><img width="132" height="91" alt="重庆茶园聚居区" src="scroll/images/20110725095230_0.jpg" /><br />
     重庆茶园聚居区</a></li>
     <li><a href="http://www.jsfoot.com/"><img width="132" height="91" alt="重庆翠云聚居区" src="scroll/images/20110725093657_0.jpg" /><br />
     重庆翠云聚居区</a></li>
     <li><a href="http://www.jsfoot.com/"><img width="132" height="91" alt="重庆两江四岸滨江地带江北片区城市设计" src="scroll/images/20110725101927_0.jpg" /><br />
-    重庆两江四岸滨江地带江北片区城市设计</a></li>
+    重庆两江四岸滨江地带江北片区城市设计</a></li> -->
 </ul>
 </div>
 <div id="fuzhi" class="scrollpic">&nbsp;</div>
@@ -113,5 +119,6 @@ rightDir.onclick = function(){
 };
 -->
 </script>
+<fb:comments href="http://localhost:3000/topic" num_posts="5" ></fb:comments>
   </body>
 </html>
