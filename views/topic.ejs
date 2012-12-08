@@ -82,24 +82,17 @@ var tab1 = document.getElementById("boximg");
 var tab2 = document.getElementById("fuzhi");
 var leftDir = document.getElementById("leftDir");
 var rightDir = document.getElementById("rightDir");
-tab2.innerHTML = tab1.innerHTML;
 function marquee(){
     switch(direction){
         case "top":
-            if(tab2.offsetHeight - tab.scrollTop <= 0){
-                tab.scrollTop -= tab1.offsetHeight;
-            }
-            else{
+           
                 tab.scrollTop+=30;
-            }
+           
         break;
         case "bottom":
-            if(tab.scrollTop <= 0){
-                tab.scrollTop += tab2.offsetHeight;
-            }
-            else{
+           
                 tab.scrollTop-=30;
-            }
+            
         break;
     }
 }
