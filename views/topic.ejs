@@ -32,5 +32,86 @@ fjs.parentNode.insertBefore(js, fjs);
  <script type="text/javascript" src="./javascripts/jquery.min.js">  ​</script>
   <script type="text/javascript" src="./javascripts/jquery-ui.min.js"> </script>
   <script type="text/javascript" src="./javascripts/code.js"></script>
+  <p><style type="text/css">
+*{margin:0;padding:0;}
+img,a{border:0;}
+.span230{width:260px;}
+.btntop,.btnbottom{height:12px;overflow:hidden;background:url(scroll/images/arrowtopbottom.gif) no-repeat;cursor:pointer;}
+.btntop{background-position:60px 0;}
+.btnbottom{background-position:60px -12px;}
+#scrollbox{height:396px;overflow:hidden;}
+.scrollcon{height:800%;}
+.scrollpic li{height:91px;overflow:hidden;margin:5px 0;}
+.scrollpic li img{float:left;display:inline;margin:0 10px 0 0;}
+.scrollpic li a{display:block;height:91px;background:#99addf;font-size:12px;color:#fff;line-height:20px;text-decoration:none;}
+.scrollpic li a:hover{background:#3d4558;color:#ff6600;}
+</style></p>
+<div class="span230">
+<div id="leftDir" class="btntop">b;</div>
+<div id="scrollbox">
+<div class="scrollcon">
+<div id="boximg" class="scrollpic">
+<ul>
+    <li><a href="http://www.jsfoot.com/"><img width="132" height="91" alt="哈尔滨市哈南工业新城核心区概念城市设计" src="scroll/images/20110627024506_0.jpg" /><br />
+    哈尔滨市哈南工业新城核心区概念城市设计</a></li>
+    <li><a href="http://www.jsfoot.com/"><img width="132" height="91" alt="重庆茶园聚居区" src="scroll/images/20110725095230_0.jpg" /><br />
+    重庆茶园聚居区</a></li>
+    <li><a href="http://www.jsfoot.com/"><img width="132" height="91" alt="重庆翠云聚居区" src="scroll/images/20110725093657_0.jpg" /><br />
+    重庆翠云聚居区</a></li>
+    <li><a href="http://www.jsfoot.com/"><img width="132" height="91" alt="重庆两江四岸滨江地带江北片区城市设计" src="scroll/images/20110725101927_0.jpg" /><br />
+    重庆两江四岸滨江地带江北片区城市设计</a></li>
+</ul>
+</div>
+<div id="fuzhi" class="scrollpic">&nbsp;</div>
+</div>
+</div>
+<div id="rightDir" class="btnbottom">a</div>
+</div>
+<script type="text/javascript">
+<!-- javascript 图片上下滚动
+var speed = 0;
+var direction="top";
+var tab = document.getElementById("scrollbox");
+var tab1 = document.getElementById("boximg");
+var tab2 = document.getElementById("fuzhi");
+var leftDir = document.getElementById("leftDir");
+var rightDir = document.getElementById("rightDir");
+tab2.innerHTML = tab1.innerHTML;
+function marquee(){
+    switch(direction){
+        case "top":
+            if(tab2.offsetHeight - tab.scrollTop <= 0){
+                tab.scrollTop -= tab1.offsetHeight;
+            }
+            else{
+                tab.scrollTop+=30;
+            }
+        break;
+        case "bottom":
+            if(tab.scrollTop <= 0){
+                tab.scrollTop += tab2.offsetHeight;
+            }
+            else{
+                tab.scrollTop-=30;
+            }
+        break;
+    }
+}
+function changeDirection(dir){
+   direction = dir;
+}
+tab.onmouseover = function(){clearInterval(timer);};
+//tab.onmouseout = function(){timer = setInterval(marquee,speed);};
+leftDir.onclick = function(){
+  changeDirection("bottom");
+  marquee();
+  
+};
+rightDir.onclick = function(){
+  changeDirection("top");
+  marquee();
+};
+-->
+</script>
   </body>
 </html>
