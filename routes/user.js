@@ -2,15 +2,35 @@
 /*
  * GET users listing.
  */
+ var database = {};
+var prefix ="C:\\Users\\asus\\Nextdraw\\public\\upload"
+
 var request = require('request'),
 $ = require('jQuery');
+
 exports.list = function(req, res){
   res.send("respond with a resource");
 };
 // exports.search = function(req, res){
 // 	res.send("hello");
 // }
+exports.topic=function(req, res, next) {
+	res.render('topic', {
+		title : 'Simple File Host Service'
+		, database : database
+	});
+}
+exports.upload=function(req, res, next) {
+	console.log(req.files.file.name);
+		if(req.files.file.name=='') throw new Error('no pitcure');
+				
+		database[req.files.file.path.replace(prefix,'')] = {
+				title : req.body.title
+		};
 
+		console.log(database);
+		res.redirect('/topic');
+}
 exports.search=function(req,res,next){
 	//console.log(req.query.keyword);
 	if(!req.query.keyword) throw new Error('no keyword');

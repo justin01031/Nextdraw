@@ -18,7 +18,11 @@ var express = require('express')
   app.set('view engine', 'ejs');
   app.use(express.favicon());
   app.use(express.logger('dev'));
-  app.use(express.bodyParser());
+  //app.use(express.bodyParser());
+  app.use(express.bodyParser({
+    keepExtensions: true
+    , uploadDir : __dirname + '/public/upload'
+  }));
   app.use(express.methodOverride());
   app.use(express.cookieParser('your secret here'));
   app.use(express.session());
@@ -34,6 +38,9 @@ app.configure('development', function(){
 app.get('/', routes.index);
 app.get('/users', user.list);
 app.get('/search',user.search);
+app.get('/topic', user.topic);
+app.post('/upload', user.upload);
+
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
 });
