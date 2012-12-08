@@ -2,15 +2,22 @@
 <html>
   <head>
     <link href="./css/bootstrap.css" rel="stylesheet" media="screen">
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/zh_TW/all.js#xfbml=1&appId=301124913339612";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
   </head>
   <body>
   	 <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
 
   <% for(var k in database) { %>
-    <img src='/upload/<%= k %>'></img><h5><%= database[k].title %></h5> 
-    <input type='text' name='title' placeholder='輸入comment' />
-    <button>留言</button>
+    <img src='/upload/<%= k %>'></img> 
+    <fb:comments href="http://localhost:3000//upload/<%= k %>" num_posts="5" ></fb:comments>
     <br>
   <% } %>
 
@@ -18,10 +25,10 @@
  
 	<form method='post' action='/upload' ENCTYPE="multipart/form-data" >
 		<input type='file' name='file' />
-		<input type='text' name='title' placeholder='輸入comment' />
+<!--		<input type='text' name='title' placeholder='輸入comment' />-->
 		<button>送出</button>
 	</form>
-
+<fb:comments href="http://localhost:3000/topic" num_posts="5" ></fb:comments>
  <script type="text/javascript" src="./javascripts/jquery.min.js">  ​</script>
   <script type="text/javascript" src="./javascripts/jquery-ui.min.js"> </script>
   <script type="text/javascript" src="./javascripts/code.js"></script>
