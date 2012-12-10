@@ -15,13 +15,7 @@ fjs.parentNode.insertBefore(js, fjs);
   <body>
   	
 
- <!--  <% for(var k in database) { %>
-    <img src='/upload/<%= k %>'></img> 
-    <fb:comments href="http://localhost:3000//upload/<%= k %>" num_posts="5" ></fb:comments>
-    <br>
-  <% } %> -->
 
-       <!-- Scripts -->
  
 	
 <div class="container">
@@ -32,12 +26,12 @@ fjs.parentNode.insertBefore(js, fjs);
       <div class="scrollcon">
         <div id="boximg" class="scrollpic">
           <ul>
-              <% for(var k in database) { %>
-              <li><img src='/upload/<%= k %>' /><br />
+              <% piclist.forEach(function(pic){ %>
+              <li><img src ='/upload/<%= pic.picurl %> '></img><br />
               </li>
     
               <br>
-              <% } %>
+               <% }) %>
         <!--     <li><a href="http://www.jsfoot.com/"><img width="132" height="91" alt="哈尔滨市哈南工业新城核心区概念城市设计" src="scroll/images/20110627024506_0.jpg" /><br />
     哈尔滨市哈南工业新城核心区概念城市设计</a></li>
     <li><a href="http://www.jsfoot.com/"><img width="132" height="91" alt="重庆茶园聚居区" src="scroll/images/20110725095230_0.jpg" /><br />
@@ -63,7 +57,7 @@ fjs.parentNode.insertBefore(js, fjs);
 
 
 
- <script type="text/javascript" src="./javascripts/jquery.min.js">  ​</script>
+  <script type="text/javascript" src="./javascripts/jquery.min.js">  ​</script>
   <script type="text/javascript" src="./javascripts/jquery-ui.min.js"> </script>
   <script type="text/javascript" src="./javascripts/code.js"></script>
   </body>

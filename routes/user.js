@@ -3,7 +3,12 @@
  * GET users listing.
  */
  var database = {};
-var prefix ="C:\\Users\\asus\\Nextdraw\\public\\upload"
+ var prefix ="C:\\Users\\George\\Desktop\\Nextdraw\\public\\upload\\"
+	,mongoose = require('mongoose');
+	//,$=require('jquery');
+
+  var piclist = require('../models/model');
+  mongoose.connect('localhost','test');//ned link to mongodb
 
 var request = require('request'),
 $ = require('jQuery');
@@ -14,21 +19,43 @@ exports.list = function(req, res){
 // exports.search = function(req, res){
 // 	res.send("hello");
 // }
+//piclist.remove(function(err){if (err) throw err})
 exports.topic=function(req, res, next) {
-	res.render('topic', {
-		title : 'Simple File Host Service'
-		, database : database
+	var temp;
+	piclist.find({title:"test1"}).exec(function(err,docs){
+    if(err){
+      next(err);
+      return;
+    }
+    res.render('topic',{piclist:docs})
+    console.log(docs);
 	});
-}
-exports.upload=function(req, res, next) {
-	console.log(req.files.file.name);
-		if(req.files.file.name=='') throw new Error('no pitcure');
-				
-		database[req.files.file.path.replace(prefix,'')] = {
-				title : req.body.title
-		};
 
-		console.log(database);
+	// res.render('topic', {
+	// 	title : 'Simple File Host Service'
+		
+
+	// })
+	//console.log(temp);
+ 
+  }
+exports.upload=function(req, res, next) {
+	// console.log(req.files.file.name);
+	 	if(req.files.file.name=='') throw new Error('no pitcure');
+		database[req.files.file.path.replace(prefix,'')] = {
+	 			title : req.body.title
+	 	};
+
+	 	console.log(database);
+		var pic_new = new piclist(
+                                 {title:"test2" ,
+                                  picurl:req.files.file.path.replace(prefix,'')
+                                  });
+      	pic_new.save(function(err)
+      	{
+        if (err) throw err
+      	});			
+	 	
 		res.redirect('/topic');
 }
 exports.search=function(req,res,next){
