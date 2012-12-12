@@ -26,20 +26,13 @@ fjs.parentNode.insertBefore(js, fjs);
       <div class="scrollcon">
         <div id="boximg" class="scrollpic">
           <ul>
-              <% piclist.forEach(function(pic){ %>
-              <li><img src ='/upload/<%= pic.picurl %> '></img><br />
+              <% for (var k=0;k < piclist.length;k++){ %>
+              <li><img src ='/upload/<%= piclist[k].picurl %> '></img><br />
               </li>
     
               <br>
-               <% }) %>
-        <!--     <li><a href="http://www.jsfoot.com/"><img width="132" height="91" alt="哈尔滨市哈南工业新城核心区概念城市设计" src="scroll/images/20110627024506_0.jpg" /><br />
-    哈尔滨市哈南工业新城核心区概念城市设计</a></li>
-    <li><a href="http://www.jsfoot.com/"><img width="132" height="91" alt="重庆茶园聚居区" src="scroll/images/20110725095230_0.jpg" /><br />
-    重庆茶园聚居区</a></li>
-    <li><a href="http://www.jsfoot.com/"><img width="132" height="91" alt="重庆翠云聚居区" src="scroll/images/20110725093657_0.jpg" /><br />
-    重庆翠云聚居区</a></li>
-    <li><a href="http://www.jsfoot.com/"><img width="132" height="91" alt="重庆两江四岸滨江地带江北片区城市设计" src="scroll/images/20110725101927_0.jpg" /><br />
-    重庆两江四岸滨江地带江北片区城市设计</a></li> -->
+               <% } %>
+       
           </ul>
         </div>
       </div>

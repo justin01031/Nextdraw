@@ -13,30 +13,30 @@
 var request = require('request'),
 $ = require('jQuery');
 
+
+piclist.find().exec(function(err,docs){console.log(docs)});	
 exports.list = function(req, res){
   res.send("respond with a resource");
 };
 // exports.search = function(req, res){
 // 	res.send("hello");
 // }
-//piclist.remove(function(err){if (err) throw err})
+piclist.remove(function(err){if (err) throw err})
+
+	
 exports.topic=function(req, res, next) {
 	var temp;
-	piclist.find({title:"test1"}).exec(function(err,docs){
+	piclist.findOne({topic:"today"}).exec(function(err,docs){
     if(err){
       next(err);
       return;
     }
-    res.render('topic',{piclist:docs})
-    console.log(docs);
+   	
+    res.render('topic',{piclist:docs.content})
+     // console.log(docs);
 	});
 
-	// res.render('topic', {
-	// 	title : 'Simple File Host Service'
-		
-
-	// })
-	//console.log(temp);
+	
  
   }
 exports.upload=function(req, res, next) {
@@ -47,14 +47,34 @@ exports.upload=function(req, res, next) {
 	 	};
 
 	 	console.log(database);
-		var pic_new = new piclist(
-                                 {title:"test2" ,
+		var pic_new = new Object({title:"testasdasd" ,
                                   picurl:req.files.file.path.replace(prefix,'')
                                   });
-      	pic_new.save(function(err)
+                                  
+		console.log(pic_new);
+		piclist.findOne({topic:"today"}).exec(function(err,docs){
+    	if(err){
+      	next(err);
+      	return;
+    	}
+    	var temp_array=new Array();
+    	for(var i=0; i < docs.content.length; i++)
+    	{
+    		var pic_old = new Object({title:docs.content[i].title, picurl:docs.content[i].picurl});
+    		console.log(pic_old);
+    		temp_array.push(pic_old);
+    		//console.log(docs.content[i]);
+
+    	}
+      	temp_array.push(pic_new);
+		docs.content = temp_array;
+		docs.save(function(err)
       	{
         if (err) throw err
-      	});			
+      	});	    	
+		console.log(docs);
+		});
+      		
 	 	
 		res.redirect('/topic');
 }
