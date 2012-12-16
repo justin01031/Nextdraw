@@ -20,15 +20,16 @@ fjs.parentNode.insertBefore(js, fjs);
    <div class="span10">
     <div class ="well offset1" id="waterwheel-carousel-vertical">
       <div class="carousel-controls">
-        <div class="carousel-prev"><a href="#">&lt; move down</a></div>
-        <div class="carousel-next"><a href="#">&gt; move up</a></div>
+<!--         <div class="carousel-prev"><a href="#">&lt; move down</a></div>
+        <div class="carousel-next"><a href="#">&gt; move up</a></div> -->
       </div>
       <div class="carousel-images">
-           <% piclist.forEach(function(pic){ %>
-              <img href="#myModal" src ='/upload/<%= pic.picurl %> ' data-toggle="modal" class='userpicture'></img>
+           <% for (var k=0;k < piclist.length;k++){ %>
+
+              <img href="#myModal" src ='/upload/<%= piclist[k].picurl %> ' data-toggle="modal" class='userpicture'></img>
               <br>
              
-               <% }) %>
+               <% } %>
 
       </div>
     </div>

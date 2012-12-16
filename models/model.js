@@ -9,7 +9,7 @@ var schema = new mongoose.Schema({topic:{type:String}
 var piclist = module.exports =mongoose.model('pic',schema);
 var pic_default = new piclist({topic:"today",
 							  content:[{picdescription:"test",
-							  	picurl:"test"
+							  	picurl:"test.jpg"
 							   }]
 							  });
 pic_default.save(function(err)
