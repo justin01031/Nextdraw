@@ -3,7 +3,7 @@
  * GET users listing.
  */
  var database = {};
- var prefix ="C:\\Users\\George\\Desktop\\Nextdraw\\public\\upload\\"
+ var prefix ="C:\\Users\\asus\\Nextdraw\\public\\upload"
 	,mongoose = require('mongoose');
 	//,$=require('jquery');
 
@@ -48,7 +48,7 @@ exports.upload=function(req, res, next) {
 
 	 	console.log(database);
 		var pic_new = new piclist(
-                                 {title:"test2" ,
+                                 {title:"test1" ,
                                   picurl:req.files.file.path.replace(prefix,'')
                                   });
       	pic_new.save(function(err)

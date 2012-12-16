@@ -12,7 +12,6 @@ $('.animateMe').each(function(){
 				);
 		});
 $('#hide').css("opacity","0");;
-var speed = 0;
 var direction="top";
 var tab = document.getElementById("scrollbox");
 var tab1 = document.getElementById("boximg");
