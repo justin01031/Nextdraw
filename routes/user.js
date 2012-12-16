@@ -47,7 +47,7 @@ exports.upload=function(req, res, next) {
 	 	};
 
 	 	console.log(database);
-		var pic_new = new Object({picdescription:"testasdasd" ,
+		var pic_new = new Object({picdescription:req.body.picdescription ,
                                   picurl:req.files.file.path.replace(prefix,'')
                                   });
                                   
