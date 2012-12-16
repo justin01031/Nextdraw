@@ -47,6 +47,10 @@ exports.upload=function(req, res, next) {
 	 	};
 
 	 	console.log(database);
+// <<<<<<< HEAD
+// 		var pic_new = new piclist(
+//                                  {title:"test1" ,
+// =======
 		var pic_new = new Object({picdescription:req.body.picdescription ,
                                   picurl:req.files.file.path.replace(prefix,'')
                                   });

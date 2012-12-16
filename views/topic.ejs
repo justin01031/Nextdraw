@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="./css/bootstrap.css" rel="stylesheet" media="screen">
+
+     <link rel="stylesheet" href="/css/waterwheel-carousel.css" charset="utf-8" />
+         <link href="./css/bootstrap.css" rel="stylesheet" media="screen">
      <link rel='stylesheet' href='/stylesheets/mystyle.css' />
     <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -12,19 +14,38 @@ js.src = "//connect.facebook.net/zh_TW/all.js#xfbml=1&appId=301124913339612";
 fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
   </head>
-  <body>
-  	
-
-
- 
-	
+<body>
 <div class="container">
-<div class="row-">
+<div class="row">
    <div class="span10">
-  <i class="icon-arrow-up btntop" id="leftDir"></i>
+    <div class ="well offset1" id="waterwheel-carousel-vertical">
+      <div class="carousel-controls">
+<!--         <div class="carousel-prev"><a href="#">&lt; move down</a></div>
+        <div class="carousel-next"><a href="#">&gt; move up</a></div> -->
+      </div>
+      <div class="carousel-images">
+           <% for (var k=0;k < piclist.length;k++){ %>
+
+              <img href="#myModal" src ='/upload/<%= piclist[k].picurl %> ' data-toggle="modal" class='userpicture'></img>
+              <br>
+             
+               <% } %>
+
+      </div>
+    </div>
+<!--   <i class="icon-arrow-up btntop" id="leftDir"></i>
     <div id="scrollbox">
       <div class="scrollcon">
         <div id="boximg" class="scrollpic">
+<<<<<<< HEAD
+          <ul> -->
+             <!--  <% piclist.forEach(function(pic){ %>
+              <img href="#myModal" src ='/upload/<%= pic.picurl %> ' data-toggle="modal"></img>
+              <br>
+              
+               <% }) %> -->
+<!--              
+=======
           <ul>
               <% for (var k=0;k < piclist.length;k++){ %>
               <li><img src ='/upload/<%= piclist[k].picurl %> '></img><br />
@@ -33,25 +54,51 @@ fjs.parentNode.insertBefore(js, fjs);
               <br>
                <% } %>
        
+>>>>>>> f4b603689b0d9958ebfa5a0c7374642af4258fa9
           </ul>
         </div>
       </div>
     </div>
+
 <i class="icon-arrow-down btnbottom" id="rightDir"></i>
-</div>
+</div> -->
 <form method='post' action='/upload' ENCTYPE="multipart/form-data" >
     <input type='file' name='file' />
-    <input type='text' name='picdescription' placeholder='description' /> 
+<input type='text' name='picdescription' placeholder='description' />
     <button>送出</button>
   </form>
 </div>
 
 </div>
+<!-- Button to trigger modal -->
+ 
+<!-- Modal -->
 
 
 
   <script type="text/javascript" src="./javascripts/jquery.min.js">  ​</script>
   <script type="text/javascript" src="./javascripts/jquery-ui.min.js"> </script>
   <script type="text/javascript" src="./javascripts/code.js"></script>
+      <script type="text/javascript" src="./javascripts/bootstrap.js"></script>
+      <script type="text/javascript" src="./javascripts/jquery.waterwheelCarousel.js"></script>
+       <script type="text/javascript">
+      $(document).ready(function () {
+        $("#waterwheel-carousel-default").waterwheelCarousel();
+        
+        $("#waterwheel-carousel-vertical").waterwheelCarousel({
+            orientation: 'vertical',
+            startingItemSeparation: 130,
+            startingWaveSeparation: 20,
+            autoPlay:0,
+            startingItem:0,
+            keyboardNav:true,
+            flankingItems:1,
+            itemDecreaseFactor:1,
+            centerOffset: 10 , 
+             edgeReaction: 'nothing' 
+        });
+
+      });
+    </script>
   </body>
 </html>
