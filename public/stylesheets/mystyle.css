@@ -28,9 +28,15 @@ body{
 /*	定義視窗大小*/
 }
 .scrollpic li{overflow:hidden;margin:5px 0;}
+<<<<<<< HEAD
 .scrollpic li img{float:left;margin:0 10px 0 0;}
 .userpicture{
 	width :400px;
 	height: 300px;
 	margin-left: 50px;
+=======
+.scrollpic li img{float:left;display:inline;margin:0 10px 0 0;}
+.content{
+	margin-top: 50px;
+>>>>>>> f4b603689b0d9958ebfa5a0c7374642af4258fa9
 }

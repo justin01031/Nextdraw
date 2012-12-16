@@ -36,6 +36,7 @@ fjs.parentNode.insertBefore(js, fjs);
     <div id="scrollbox">
       <div class="scrollcon">
         <div id="boximg" class="scrollpic">
+<<<<<<< HEAD
           <ul> -->
              <!--  <% piclist.forEach(function(pic){ %>
               <img href="#myModal" src ='/upload/<%= pic.picurl %> ' data-toggle="modal"></img>
@@ -43,6 +44,16 @@ fjs.parentNode.insertBefore(js, fjs);
               
                <% }) %> -->
 <!--              
+=======
+          <ul>
+              <% for (var k=0;k < piclist.length;k++){ %>
+              <li><img src ='/upload/<%= piclist[k].picurl %> '></img><br />
+              </li>
+    
+              <br>
+               <% } %>
+       
+>>>>>>> f4b603689b0d9958ebfa5a0c7374642af4258fa9
           </ul>
         </div>
       </div>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bootstrap 101 Template</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link rel='stylesheet' href='/stylesheets/mystyle.css' />
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Next Draw</a>
+          <div class="nav-collapse collapse">
+            <p class="navbar-text pull-right">
+              <a href="#" class="navbar-link">Login</a>
+            </p>
+            <ul class="nav pull-right">
+            <!--  <li class="active"><a href="#">Home</a></li>-->
+                <li ><a href="#about">About</a></li>
+                <li ><a href="#contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+    <div class="container">
+    <div class="content">
+    <div class="page-header">
+      <h1>創建主題</h1>
+    </div>
+    
+    
+    
+    <form id="add-topic" action="/addtopic" method="post" enctype="multipart/form-data">
+      
+      
+      
+      <label>圖片</label>
+      <input type="file" name="file" class="required" style="margin-bottom: 10px;"  />
+      <label class="help-inline">
+        <small>restriction</small>
+      </label>
+      
+      <label>主題</label>
+      <input type="text" name="topic" class="input-xxlarge required" />
+      
+      <label >分類</label>
+      <select name="category" class="input-large">
+        
+          <option value="1">1</option>
+        
+          <option value="2">2</option>
+        
+          <option value="3">3</option>
+        
+          <option value="4">4</option>
+        
+          <option value="5">5</option>
+        
+          <option value="6">6</option>
+        
+          <option value="7">7</option>
+        
+      </select>
+      
+      <label >描述</label>
+      <textarea name="description" class="input-xxlarge" style="min-height: 150px;"></textarea>
+      <div>
+        <button class="btn btn-success">送出</button>
+       </div>     
+    </form>
+    </div>
+  </div>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

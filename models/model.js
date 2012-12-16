@@ -1,5 +1,18 @@
 var mongoose = require('mongoose');
-var schema = new mongoose.Schema({title:{type:String,required:true},
-                              	  picurl:{type:String,required:true}
+var eachpic = new mongoose.Schema({picdescription:{type:String},
+                              	   picurl:{type:String,required:true}
                                  });
+var schema = new mongoose.Schema({topic:{type:String}
+								  ,category:{type:String}
+								  ,description:{type:String}
+								  ,content:[eachpic]});
 var piclist = module.exports =mongoose.model('pic',schema);
+var pic_default = new piclist({topic:"today",
+							  content:[{picdescription:"test",
+							  	picurl:"test"
+							   }]
+							  });
+pic_default.save(function(err)
+      	{
+        if (err) throw err
+      	});	
