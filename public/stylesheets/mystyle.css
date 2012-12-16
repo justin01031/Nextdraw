@@ -29,6 +29,6 @@ body{
 }
 .scrollpic li{overflow:hidden;margin:5px 0;}
 .scrollpic li img{float:left;display:inline;margin:0 10px 0 0;}
-.container{
-	
+.content{
+	margin-top: 50px;
 }

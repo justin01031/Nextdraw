@@ -47,7 +47,7 @@ exports.upload=function(req, res, next) {
 	 	};
 
 	 	console.log(database);
-		var pic_new = new Object({title:"testasdasd" ,
+		var pic_new = new Object({picdescription:"testasdasd" ,
                                   picurl:req.files.file.path.replace(prefix,'')
                                   });
                                   
@@ -60,7 +60,7 @@ exports.upload=function(req, res, next) {
     	var temp_array=new Array();
     	for(var i=0; i < docs.content.length; i++)
     	{
-    		var pic_old = new Object({title:docs.content[i].title, picurl:docs.content[i].picurl});
+    		var pic_old = new Object({picdescription:docs.content[i].picdescription, picurl:docs.content[i].picurl});
     		console.log(pic_old);
     		temp_array.push(pic_old);
     		//console.log(docs.content[i]);
@@ -138,4 +138,32 @@ exports.search=function(req,res,next){
  	});
 
 	}
-	
+	exports.newtopic=function(req,res,next){
+		res.render('newtopic',{});
+
+	}
+	exports.addtopic=function(req,res,next){
+		console.log(req.body.topic);
+		console.log(req.body.category);
+		console.log(req.body.description);
+		if(req.files.file.name=='') throw new Error('no pitcure');
+		database[req.files.file.path.replace(prefix,'')] = {
+	 			title : req.body.picdescription
+	 	};
+
+	 	console.log(database);
+		var topic_new = new piclist({topic:req.body.topic
+									 ,category:req.body.category
+                                     ,description:req.body.description
+							  	     ,content:[{picdescription:"head",
+							  	    	picurl:req.files.file.path.replace(prefix,'')
+							          }]
+							         });
+		
+		topic_new.save(function(err){
+			if (err) throw err
+		});
+		console.log(topic_new);
+      		
+		res.redirect('/newtopic');
+	}
