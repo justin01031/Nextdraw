@@ -1,16 +1,27 @@
 body{
 	background-image: url("../img/retina_wood_@2X.png");
 }
-#content{
-	margin-top: 20%;
+.topic{
 	text-align: center;
+	margin-top: 10px;
+	line-height: 0px;
+}
+.hero{
+	margin-bottom: 10px;
+	line-height: 20px;
+	padding: 30px;
+}
+#content{
+	text-align: center;
+	margin-top:;
 }
 #searchbar{
 	width: 432px;
 
 }
 #hide{
-	top:250px;
+	position: absolute;
+	top:150%;
 }
 .span230{width:50%;}
 .btntop,.btnbottom{

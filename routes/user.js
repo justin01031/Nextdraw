@@ -3,7 +3,7 @@
  * GET users listing.
  */
  var database = {};
- var prefix ="C:\\Users\\George\\Desktop\\Nextdraw\\public\\upload\\"
+ var prefix ="C:\\Users\\asus\\Nextdraw\\public\\upload"
 	,mongoose = require('mongoose');
 	//,$=require('jquery');
 

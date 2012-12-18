@@ -36,12 +36,3 @@ function changeDirection(dir){
 }
 // tab.onmouseover = function(){clearInterval(timer);};
 //tab.onmouseout = function(){timer = setInterval(marquee,speed);};
-leftDir.onclick = function(){
-  changeDirection("bottom");
-  marquee();
-  
-};
-rightDir.onclick = function(){
-  changeDirection("top");
-  marquee();
-};
