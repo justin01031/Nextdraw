@@ -13,6 +13,7 @@
 var request = require('request'),
 $ = require('jQuery');
 
+var title;
 
 piclist.find().exec(function(err,docs){console.log(docs)});	
 exports.list = function(req, res){
@@ -23,10 +24,14 @@ exports.list = function(req, res){
 // }
 piclist.remove(function(err){if (err) throw err})
 
-	
+exports.topic_chosen=function(req, res, next){
+	console.log(req.body);
+	title=req.body.title;
+}	
 exports.topic=function(req, res, next) {
+	console.log(title);
 	var temp;
-	piclist.findOne({topic:"today"}).exec(function(err,docs){
+	piclist.findOne({topic:title}).exec(function(err,docs){
     if(err){
       next(err);
       return;

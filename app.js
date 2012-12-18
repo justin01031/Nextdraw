@@ -39,6 +39,7 @@ app.get('/', routes.index);
 app.get('/users', user.list);
 app.get('/search',user.search);
 app.get('/topic', user.topic);
+app.post('/topic',user.topic_chosen);
 app.get('/newtopic', user.newtopic);
 app.post('/upload', user.upload);
 app.post('/addtopic',user.addtopic);

@@ -44,7 +44,7 @@
      
        <a id="hide thumb1" href="/upload/test.jpg" class="highslide " onclick="return hs.expand(this)"> 
         <img src="/upload/test.jpg" id="hide" alt="Highslide JS"class="animateMe" title="Click to enlarge" width=auto /></a>
-        <h3>花花世界</h3>
+        <a href="/topic" class ="title"><h3>today</h3></a>
       <p>post by justinQQ</p>
      
       </li>
@@ -53,7 +53,7 @@
      
        <a id="hide thumb1" href="/upload/test.jpg" class="highslide " onclick="return hs.expand(this)"> 
         <img src="/upload/test.jpg" id="hide" alt="Highslide JS"class="animateMe" title="Click to enlarge" width=auto /></a>
-        <h3>花花世界</h3>
+       <a href="/topic" class="title"><h3>today</h3></a>
       <p>post by justinQQ</p>
      
       </li>
@@ -62,7 +62,7 @@
      
        <a id="hide thumb1" href="/upload/test.jpg" class="highslide " onclick="return hs.expand(this)"> 
         <img src="/upload/test.jpg" id="hide" alt="Highslide JS"class="animateMe" title="Click to enlarge" width=auto /></a>
-        <h3>花花世界</h3>
+       <a href="/topic" class="title"><h3>today</h3></a>
       <p>post by justinQQ</p>
      
       </li>
@@ -84,5 +84,12 @@
 <link rel="stylesheet" type="text/css" href="./javascripts/highslide/highslide.css" /> 
 <script type="text/javascript"> hs.graphicsDir = './javascripts/highslide/graphics/'; hs.showCredits = false; hs.outlineType = 'rounded-white'; hs.outlineWhileAnimating = true; </script>
 <!— 圖片放特效 結束 —>
+  <script type="text/javascript">
+  $(".title").on("click",function(){
+    console.log($(this).text());
+    $.post('/topic',{title:$(this).text()},function(){console.log('success');});
+    //alert('hi');
+  });
+  </script>
   </body>
 </html>
