@@ -11,7 +11,13 @@ body{
 	line-height: 20px;
 	padding: 23px;
 }
-
+.brand{
+	/*font-family: 'Kaushan Script';*/
+	font-size: 13px;
+}
+.topic{
+	margin: 0 auto;
+}
 #content{
 	text-align: center;
 	margin-top:;
