@@ -35,13 +35,13 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
-app.get('/', routes.index);
+app.get('/', user.index_topic);
 app.get('/users', user.list);
 app.get('/search',user.search);
-app.get('/topic', user.topic);
-app.post('/topic',user.topic_chosen);
+app.get('/topic/:id', user.topic);
+//app.post('/topic',user.topic_chosen);
 app.get('/newtopic', user.newtopic);
-app.post('/upload', user.upload);
+app.post('/upload/:id', user.upload);
 app.post('/addtopic',user.addtopic);
 
 http.createServer(app).listen(app.get('port'), function(){

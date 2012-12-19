@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+   
    
     <link href="/css/bootstrap.css" rel="stylesheet" media="screen">
      <link rel='stylesheet' href='/stylesheets/style.css' />
@@ -40,16 +40,17 @@
       </div>
   <div id="content">
     <ul class="thumbnails thumbnailscenter">
+       <% for (var k=0;k < 3;k++){ %>
       <li class="span3 thumbnail shadowbox" >
      
-       <a id="hide thumb1" href="/upload/test.jpg" class="highslide " onclick="return hs.expand(this)"> 
-        <img src="/upload/test.jpg" id="hide" alt="Highslide JS"class="animateMe" title="Click to enlarge" width=auto /></a>
-        <a href="/topic" class ="title"><h3>today</h3></a>
+       <a id="hide thumb1" href="/upload/<%= topics[k].content[0].picurl %>" class="highslide " onclick="return hs.expand(this)"> 
+        <img src="/upload/<%= topics[k].content[0].picurl %>" id="hide" alt="Highslide JS"class="animateMe" title="Click to enlarge" width=auto /></a>
+        <a href="/topic/<%=topics[k].topic %>" class ="title"><h3><%= topics[k].topic%></h3></a>
       <p>post by justinQQ</p>
      
       </li>
-
-      <li class="span3 thumbnail shadowbox" >
+       <% } %>
+<!--       <li class="span3 thumbnail shadowbox" >
      
        <a id="hide thumb1" href="/upload/test.jpg" class="highslide " onclick="return hs.expand(this)"> 
         <img src="/upload/test.jpg" id="hide" alt="Highslide JS"class="animateMe" title="Click to enlarge" width=auto /></a>
@@ -66,7 +67,7 @@
       <p>post by justinQQ</p>
      
       </li>
-         
+          -->
       </div>
     </div>
    </ul>
@@ -84,12 +85,12 @@
 <link rel="stylesheet" type="text/css" href="./javascripts/highslide/highslide.css" /> 
 <script type="text/javascript"> hs.graphicsDir = './javascripts/highslide/graphics/'; hs.showCredits = false; hs.outlineType = 'rounded-white'; hs.outlineWhileAnimating = true; </script>
 <!— 圖片放特效 結束 —>
-  <script type="text/javascript">
+   <script type="text/javascript">
   $(".title").on("click",function(){
     console.log($(this).text());
     $.post('/topic',{title:$(this).text()},function(){console.log('success');});
     //alert('hi');
   });
-  </script>
+   </script>
   </body>
 </html>

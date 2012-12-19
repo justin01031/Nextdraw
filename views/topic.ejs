@@ -2,8 +2,8 @@
 <html>
   <head>
 
-     <link rel="stylesheet" href="/css/waterwheel-carousel.css" charset="utf-8" />
-         <link href="./css/bootstrap.css" rel="stylesheet" media="screen">
+     <link rel="stylesheet" href="../css/waterwheel-carousel.css" charset="utf-8" />
+         <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
      <link rel='stylesheet' href='/stylesheets/mystyle.css' />
     <div id="fb-root"></div>
 <div id="fb-root"></div>
@@ -86,7 +86,7 @@
 <i class="icon-arrow-down btnbottom" id="rightDir"></i>
 </div> -->
 <div class=' offset1'>
-  <form method='post' action='/upload' ENCTYPE="multipart/form-data"  >
+  <form method='post' action='/upload/<%= topic%>' ENCTYPE="multipart/form-data"  >
     <input type='file' name='file' />
     <input type='text' name='picdescription' placeholder='description' />
       <button>送出</button>
@@ -100,11 +100,11 @@
 
 
 
-  <script type="text/javascript" src="./javascripts/jquery.min.js">  ​</script>
-  <script type="text/javascript" src="./javascripts/jquery-ui.min.js"> </script>
-  <script type="text/javascript" src="./javascripts/code.js"></script>
-      <script type="text/javascript" src="./javascripts/bootstrap.js"></script>
-      <script type="text/javascript" src="./javascripts/jquery.waterwheelCarousel.js"></script>
+  <script type="text/javascript" src="../javascripts/jquery.min.js">  ​</script>
+  <script type="text/javascript" src="../javascripts/jquery-ui.min.js"> </script>
+  <script type="text/javascript" src="../javascripts/code.js"></script>
+      <script type="text/javascript" src="../javascripts/bootstrap.js"></script>
+      <script type="text/javascript" src="../javascripts/jquery.waterwheelCarousel.js"></script>
        <script type="text/javascript">
       $(document).ready(function () {
         $("#waterwheel-carousel-default").waterwheelCarousel();

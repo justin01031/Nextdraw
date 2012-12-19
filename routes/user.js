@@ -3,7 +3,7 @@
  * GET users listing.
  */
  var database = {};
- var prefix ="C:\\Users\\asus\\Nextdraw\\public\\upload"
+ var prefix ="C:\\Users\\George\\Desktop\\Nextdraw\\public\\upload"
 	,mongoose = require('mongoose');
 	//,$=require('jquery');
 
@@ -13,9 +13,17 @@
 var request = require('request'),
 $ = require('jQuery');
 
-var title;
+// var title;
 
 piclist.find().exec(function(err,docs){console.log(docs)});	
+exports.index_topic = function(req, res){
+  piclist.find().exec(function(err,docs){
+  	if (err) throw err 
+  	console.log(docs);
+  	res.render('index',{topics:docs});
+  });
+  
+};
 exports.list = function(req, res){
   res.send("respond with a resource");
 };
@@ -24,20 +32,21 @@ exports.list = function(req, res){
 // }
 piclist.remove(function(err){if (err) throw err})
 
-exports.topic_chosen=function(req, res, next){
-	console.log(req.body);
-	title=req.body.title;
-}	
+// exports.topic_chosen=function(req, res, next){
+// 	console.log(req.body);
+// 	title=req.body.title;
+// }	
 exports.topic=function(req, res, next) {
-	console.log(title);
+	console.log(req.params['id']);
+	console.log('hihi');
 	var temp;
-	piclist.findOne({topic:title}).exec(function(err,docs){
+	piclist.findOne({topic:req.params['id']}).exec(function(err,docs){
     if(err){
       next(err);
       return;
     }
    	
-    res.render('topic',{piclist:docs.content})
+    res.render('topic',{piclist:docs.content, topic:req.params['id']})
      // console.log(docs);
 	});
 
@@ -61,7 +70,7 @@ exports.upload=function(req, res, next) {
                                   });
                                   
 		console.log(pic_new);
-		piclist.findOne({topic:"today"}).exec(function(err,docs){
+		piclist.findOne({topic:req.params['id']}).exec(function(err,docs){
     	if(err){
       	next(err);
       	return;
@@ -85,7 +94,7 @@ exports.upload=function(req, res, next) {
 		});
       		
 	 	
-		res.redirect('/topic');
+		res.redirect('/topic/' + req.params['id'] );
 }
 exports.search=function(req,res,next){
 	//console.log(req.query.keyword);
