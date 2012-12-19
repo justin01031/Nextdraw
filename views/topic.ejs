@@ -15,9 +15,31 @@ fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
   </head>
 <body>
+ <div class="navbar ">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Next Draw</a>
+          <div class="nav-collapse collapse">
+            <p class="navbar-text pull-right">
+              <a href="#" class="navbar-link">+</a>
+            </p>
+            <ul class="nav pull-right">
+            <!--  <li class="active"><a href="#">Home</a></li>-->
+                <li ><a href="#about">About</a></li>
+                <li ><a href="#contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div> 
+  
 <div class="container">
 <div class="row">
-   <div class="span10">
     <div class ="well offset1" id="waterwheel-carousel-vertical">
       <div class="carousel-controls">
 <!--         <div class="carousel-prev"><a href="#">&lt; move down</a></div>
@@ -62,13 +84,13 @@ fjs.parentNode.insertBefore(js, fjs);
 
 <i class="icon-arrow-down btnbottom" id="rightDir"></i>
 </div> -->
-<form method='post' action='/upload' ENCTYPE="multipart/form-data" >
+<div class=' offset1'>
+  <form method='post' action='/upload' ENCTYPE="multipart/form-data"  >
     <input type='file' name='file' />
-<input type='text' name='picdescription' placeholder='description' />
-    <button>送出</button>
-  </form>
+    <input type='text' name='picdescription' placeholder='description' />
+      <button>送出</button>
+    </form>
 </div>
-
 </div>
 <!-- Button to trigger modal -->
  
