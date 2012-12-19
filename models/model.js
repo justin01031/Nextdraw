@@ -7,12 +7,15 @@ var schema = new mongoose.Schema({topic:{type:String}
 								  ,description:{type:String}
 								  ,content:[eachpic]});
 var piclist = module.exports =mongoose.model('pic',schema);
-var pic_default = new piclist({topic:"today",
-							  content:[{picdescription:"test",
-							  	picurl:"test.jpg"
+for (var i = 0 ; i < 3 ;i++)
+{
+var pic_default = new piclist({topic:"today" + i,
+							  content:[{picdescription:"test" + i,
+							  	picurl:"test" + i + ".jpg"
 							   }]
 							  });
 pic_default.save(function(err)
       	{
         if (err) throw err
       	});	
+}
