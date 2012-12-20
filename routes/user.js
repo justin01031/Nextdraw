@@ -183,5 +183,5 @@ exports.search=function(req,res,next){
 		});
 		console.log(topic_new);
       		
-		res.redirect('/newtopic');
+		res.redirect('/topic/'+ req.body.topic);
 	}
