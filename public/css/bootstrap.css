@@ -66,7 +66,7 @@ img {
   width: auto\9;
   /* IE7-8 need help adjusting responsive images */
 
-  height: auto;
+  /*height: auto;*/
   /* Part 2: Scale the height according to the width, otherwise you get stretching */
 
   vertical-align: middle;
@@ -291,7 +291,7 @@ a:hover {
   width: 300px;
 }
 .span3 {
-  width: 220px;
+  width: 280px;
 }
 .span2 {
   width: 140px;
@@ -4612,7 +4612,7 @@ input[type="submit"].btn.btn-mini {
 }
 .thumbnails > li {
   float: left;
-  margin-bottom: 20px;
+  /*margin-bottom: 20px;*/
   margin-left: 20px;
 }
 .thumbnail {
