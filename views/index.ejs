@@ -3,6 +3,14 @@
   <head>
    
     <title>Next Draw</title>
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/zh_TW/all.js#xfbml=1&appId=301124913339612";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
     <link href="/css/bootstrap.css" rel="stylesheet" media="screen">
      <link rel='stylesheet' href='/stylesheets/style.css' />
       <link rel='stylesheet' href='/stylesheets/mystyle.css' />
@@ -48,8 +56,8 @@
        <% for (var k=0;k < 3;k++){ %>
       <li class="span3 thumbnail shadowbox" >
      
-       <a id="hide thumb1" href="/upload/<%= topics[k].content[0].picurl %>" class="highslide " onclick="return hs.expand(this)"> 
-        <img src="/upload/<%= topics[k].content[0].picurl %>" id="hide" alt="Highslide JS"class="animateMe" title="Click to enlarge" width=auto /></a>
+       <a id="hide thumb1" href="/upload/<%= topics[k].content[0].picurl %>" class="highslide" onclick="return hs.expand(this)"> 
+        <img src="/upload/<%= topics[k].content[0].picurl %>" id="hide" alt="Highslide JS"class="animateMe  indexpic" title="Click to enlarge" /></a>
         <a href="/topic/<%=topics[k].topic %>" class ="title"><h3><%= topics[k].topic%></h3></a>
       <p>post by justinQQ</p>
      
