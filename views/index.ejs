@@ -6,6 +6,7 @@
     <link href="/css/bootstrap.css" rel="stylesheet" media="screen">
      <link rel='stylesheet' href='/stylesheets/style.css' />
       <link rel='stylesheet' href='/stylesheets/mystyle.css' />
+      <link href='http://fonts.googleapis.com/css?family=Rancho' rel='stylesheet' type='text/css'>
   </head>
   <body>
      <div class="navbar navbar-fixed-top">
@@ -16,7 +17,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="/">Home</a>
+          <a class="brand" href="/">NextDraw</a>
           <div class="nav-collapse collapse">
           <!--   <p class="navbar-text pull-right">
               
@@ -35,13 +36,14 @@
   <div class="container">
     <div class="row">
         <div class="hero-unit hero shadowbox">
-        <div class="topic">
+          <img src="../img/cloud.png" alt="" align="middle">
+        <!-- <div class="topic">
           <img src="../img/topic.gif" alt="NextDraw" height="95" width="320" align="middle">
         </div>
-        <!-- <h1 class="topic">Next Draw</h1> -->
+        <h1 class="topic">Next Draw</h1>
         <p>上傳圖片與人分享</p>
         <p>發揮全面的想像力</p>
-        <p>參與圖片串的製作</p>
+        <p>參與圖片串的製作</p> -->
       </div>
   <div id="content">
     <ul class="thumbnails thumbnailscenter">
@@ -49,7 +51,7 @@
       <li class="span3 thumbnail shadowbox" >
      
        <a id="hide thumb1" href="/upload/<%= topics[k].content[0].picurl %>" class="highslide " onclick="return hs.expand(this)"> 
-        <img src="/upload/<%= topics[k].content[0].picurl %>" id="hide" alt="Highslide JS"class="animateMe" title="Click to enlarge" width=auto /></a>
+        <img src="/upload/<%= topics[k].content[0].picurl %>" id="hide" alt="Highslide JS"class="animateMe" title="Click to enlarge" width="280" height="220"></a>
         <a href="/topic/<%=topics[k].topic %>" class ="title"><h3><%= topics[k].topic%></h3></a>
       <p>post by justinQQ</p>
      

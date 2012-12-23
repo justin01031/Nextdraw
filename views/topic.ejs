@@ -5,6 +5,8 @@
      <link rel="stylesheet" href="../css/waterwheel-carousel.css" charset="utf-8" />
          <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
      <link rel='stylesheet' href='/stylesheets/mystyle.css' />
+     <link rel='stylesheet' href='/stylesheets/style.css' />
+     <link href='http://fonts.googleapis.com/css?family=Rancho' rel='stylesheet' type='text/css'>
     <div id="fb-root"></div>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -16,7 +18,7 @@
 }(document, 'script', 'facebook-jssdk'));</script>
   </head>
 <body>
- <div class="navbar ">
+ <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">
           <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -24,7 +26,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="/">Home</a>
+          <a class="brand" href="/">NextDraw</a>
           <div class="nav-collapse collapse">
             <!-- <p class="navbar-text pull-right">
               <a href="#" class="navbar-link">+</a>
@@ -89,7 +91,8 @@
 </div> -->
 <div class=' offset1'>
   <form method='post' action='/upload/<%= topic%>' ENCTYPE="multipart/form-data"  >
-    <input type='file' name='file' />
+    <input type="file" name="file" id="file0" multiple="multiple" /><br>
+    <img src="" id="img0" >
     <input type='text' name='picdescription' placeholder='description' />
       <button>送出</button>
     </form>
@@ -126,5 +129,33 @@
 
       });
     </script>
+      <script>  
+  /**
+   * 使用HTML5 File API, 來即時預覽image
+   */
+  $("#file0").change(function(){
+    var objUrl = getObjectURL(this.files[0]) ;
+    console.log("objUrl = "+objUrl) ;
+    if (objUrl) {
+      $("#img0").attr("src", objUrl) ;
+    }
+  }) ;
+  
+  /**
+   * 建立一個可存取到該file的url
+   * PS: 瀏覽器必須支援HTML5 File API
+   */
+  function getObjectURL(file) {
+    var url = null ; 
+    if (window.createObjectURL!=undefined) { // basic
+      url = window.createObjectURL(file) ;
+    } else if (window.URL!=undefined) { // mozilla(firefox)
+      url = window.URL.createObjectURL(file) ;
+    } else if (window.webkitURL!=undefined) { // webkit or chrome
+      url = window.webkitURL.createObjectURL(file) ;
+    }
+    return url ;
+  }
+  </script>
   </body>
 </html>
