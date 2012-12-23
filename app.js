@@ -39,7 +39,7 @@ app.get('/', user.index_topic);
 app.get('/users', user.list);
 app.get('/search',user.search);
 app.get('/topic/:id', user.topic);
-//app.post('/topic',user.topic_chosen);
+app.post('/topic',user.add_pop);
 app.get('/newtopic', user.newtopic);
 app.post('/upload/:id', user.upload);
 app.post('/addtopic',user.addtopic);
