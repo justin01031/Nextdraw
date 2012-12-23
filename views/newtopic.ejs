@@ -44,7 +44,8 @@
       
       
       <label>圖片</label>
-      <input type="file" name="file" class="required" style="margin-bottom: 10px;"  />
+      <input type="file" name="file" id="file0" multiple="multiple" /><br>
+      <img src="" id="img0" >
       <label class="help-inline">
         <small>restriction</small>
       </label>
@@ -81,5 +82,33 @@
   </div>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script>  
+  /**
+   * 使用HTML5 File API, 來即時預覽image
+   */
+  $("#file0").change(function(){
+    var objUrl = getObjectURL(this.files[0]) ;
+    console.log("objUrl = "+objUrl) ;
+    if (objUrl) {
+      $("#img0").attr("src", objUrl) ;
+    }
+  }) ;
+  
+  /**
+   * 建立一個可存取到該file的url
+   * PS: 瀏覽器必須支援HTML5 File API
+   */
+  function getObjectURL(file) {
+    var url = null ; 
+    if (window.createObjectURL!=undefined) { // basic
+      url = window.createObjectURL(file) ;
+    } else if (window.URL!=undefined) { // mozilla(firefox)
+      url = window.URL.createObjectURL(file) ;
+    } else if (window.webkitURL!=undefined) { // webkit or chrome
+      url = window.webkitURL.createObjectURL(file) ;
+    }
+    return url ;
+  }
+  </script>
   </body>
 </html>
