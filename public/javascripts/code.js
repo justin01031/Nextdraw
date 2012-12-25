@@ -11,7 +11,8 @@ $('.animateMe').each(function(){
 			function(){$(this).show();}
 				);
 		});
-$('#hide').css("opacity","0");;
+$('#hide').css("opacity","0");
+// $('.active').addClass("hide2");
 var direction="top";
 var tab = document.getElementById("scrollbox");
 var tab1 = document.getElementById("boximg");
@@ -33,6 +34,21 @@ function marquee(){
 }
 function changeDirection(dir){
    direction = dir;
-}
+};
+// $('.active').each(function(){ 
+//     // if ($('img').css('z-index') === '3') {
+//     // 	$(this).addClass("hide");
+        
+//     // }
+
+//    }
+// )
+
 // tab.onmouseover = function(){clearInterval(timer);};
 //tab.onmouseout = function(){timer = setInterval(marquee,speed);};
+ // $('<div>').addClass('span5 well').text(ggg.name).appendTo($('#group'));
+ 
+ // $('.active').on('click', function(e){
+ //    comment('yo');
+
+ //  });

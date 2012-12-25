@@ -48,8 +48,7 @@
 <div class="row">
   <div >
   <h2 class="offset1 well shadowbox"><%=topic%>
-  <img src="../img/heart.png" alt="增加人氣" title="增加人氣" align="right" class="heart" onclick="$.post('/topic',{thistopic:'<%=topic%>'})">
-  <h3 align="right"><%=popularity%></h3></h2>
+  <div class="fb-like" data-href="http://localhost:3000/topic/<%=topic%>" data-send="true" data-width="450" data-show-faces="true" data-font="arial"></div>
   
   </div>
     <div class ="well offset1" id="waterwheel-carousel-vertical">
@@ -164,6 +163,7 @@
     return url ;
   }
 
+  
   
   
   </script>

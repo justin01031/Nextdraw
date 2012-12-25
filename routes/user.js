@@ -46,7 +46,7 @@ exports.topic=function(req, res, next) {
       return;
     }
    	
-    res.render('topic',{piclist:docs.content, topic:req.params['id'],popularity:docs.popularity})
+    res.render('topic',{piclist:docs.content, topic:req.params['id']})
      // console.log(docs);
 	});
 
@@ -173,7 +173,6 @@ exports.upload=function(req, res, next) {
 		var topic_new = new piclist({topic:req.body.topic
 									 ,category:req.body.category
                                      ,description:req.body.description
-                                     ,popularity:0
 							  	     ,content:[{picdescription:"head",
 							  	    	picurl:req.files.file.path.replace(prefix,'')
 							          }]
@@ -186,13 +185,3 @@ exports.upload=function(req, res, next) {
       		
 		res.redirect('/topic/'+ req.body.topic);
 	}
-exports.add_pop=function(req,res,next){
-	console.log(req.body);
-	piclist.findOne({topic:req.body.thistopic}).exec(function(err,docs){
-		console.log(docs.popularity+1);
-		docs.popularity = docs.popularity+1;
-		docs.save();
-		res.render('topic',{piclist:docs.content, topic:req.body.thistopic,popularity:docs.popularity})
-	})
-
-}
