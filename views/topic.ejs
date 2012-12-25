@@ -63,6 +63,7 @@
       </div>
       <div class='well shadowbox commentbox'id ='comment'>
       <% for (var k=0;k < piclist.length;k++){ %>
+      
       <div style="display:none;"  class="fb-comments <%=k%>" data-href='http://localhost:3000/upload/<%= piclist[k].picurl %> ' data-width="300" data-num-posts="4"></div>
                <% } %>
   </div>
