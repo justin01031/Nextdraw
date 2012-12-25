@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link href="./css/bootstrap.css" rel="stylesheet" media="screen">
+<head>
+   
+    <title>Next Draw</title>
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/zh_TW/all.js#xfbml=1&appId=301124913339612";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+    <link href="/css/bootstrap.css" rel="stylesheet" media="screen">
+     <link rel='stylesheet' href='/stylesheets/style.css' />
+      <link rel='stylesheet' href='/stylesheets/mystyle.css' />
+      <link href='http://fonts.googleapis.com/css?family=Rancho' rel='stylesheet' type='text/css'>
   </head>
   <body>
-  	  <div class="navbar navbar-inverse navbar-fixed-top">
+     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">
           <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -14,31 +27,41 @@
           </a>
           <a class="brand" href="/">NextDraw</a>
           <div class="nav-collapse collapse">
-            <p class="navbar-text pull-right">
-              <a href="#" class="navbar-link">Login</a>
-            </p>
+          <!--   <p class="navbar-text pull-right">
+              
+            </p> -->
             <ul class="nav pull-right">
             <!--  <li class="active"><a href="#">Home</a></li>-->
+             <form id="searchbar" action="/search" method="get" >
+                   <input type="text" data-provide="typeahead" name='keyword'>
+                   </form>
                 <li ><a href="#about">About</a></li>
                 <li ><a href="#contact">Contact</a></li>
+
+                <li ><a href="/newtopic">+</a>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
       </div>
     </div>
-    <div>the key word is <%= keyword %></div>
+    <div> the key word is <%= keyword %></div>
     <div>搜尋結果</div>
-      <% for(var i=0; i<result.Title.length; i++) { %>
-      <div >
-        <h3><%= result.Title[i] %><%=result.Subtitle[i] %></h3>
-        <h5><%= result.Author[i] %></h5>
-        <h5><%= result.Publisher[i] %></h5>
-      </div>
-      <% } %>
+       <% for (var k=0;k < result.length; k++){ %>
+      <li class="span3 thumbnail shadowbox" >
+     
+       <a id="hide thumb1" href="/upload/<%= result[k].content[0].picurl %>" class="highslide " onclick="return hs.expand(this)"> 
+        <img src="/upload/<%= result[k].content[0].picurl %>" id="hide" alt="Highslide JS"class="animateMe" title="Click to enlarge" width="280" height="220"></a>
+        <a href="/topic/<%=result[k].topic %>" class ="title"><h3><%= result[k].topic%></h3></a>
+      <p>post by justinQQ</p>
+     
+      </li>
+       <% } %>
+     
        <!-- Scripts -->
-  <script type="text/javascript" src="./javascripts/jquery.min.js">  ​</script>
+<script type="text/javascript" src="./javascripts/jquery.min.js">  ​</script>
   <script type="text/javascript" src="./javascripts/jquery-ui.min.js"> </script>
   <script type="text/javascript" src="./javascripts/code.js"></script>
+    <script type="text/javascript" src="./javascripts/bootstrap.js"></script>
 
   </body>
 </html>
