@@ -839,7 +839,7 @@ pre code {
   overflow-y: scroll;
 }
 form {
-  margin: 0 0 20px;
+  /*margin-right: 200px;*/
 }
 fieldset {
   padding: 0;
@@ -1515,6 +1515,7 @@ input.search-query {
   padding-right: 4px \9;
   padding-left: 14px;
   padding-left: 4px \9;
+  /*margin-right: 10px;*/
   /* IE7-8 doesn't have border-radius, so don't indent the padding */
 
   margin-bottom: 0;
@@ -3727,6 +3728,7 @@ input[type="submit"].btn.btn-mini {
   float: left;
   margin-top: 5px;
   margin-bottom: 0;
+  margin-right: 10px;
 }
 .navbar-search .search-query {
   margin-bottom: 0;
