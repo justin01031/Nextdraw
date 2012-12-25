@@ -11,9 +11,17 @@ body{
 	line-height: 20px;
 	padding: 23px;
 }
+.margintop{
+	margin-top: 41px;
+}
 .brand{
 	/*font-family: 'Kaushan Script';*/
 	font-size: 13px;
+}
+
+.indexpic{
+	height:auto;
+	width: 200px;
 }
 .topic{
 	margin: 0 auto;
@@ -60,4 +68,8 @@ body{
 	width :400px;
 	height: 300px;
 	margin-left: 50px;
+}
+
+.hide2{
+	color: blue;
 }

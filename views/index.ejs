@@ -3,6 +3,14 @@
   <head>
    
     <title>Next Draw</title>
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/zh_TW/all.js#xfbml=1&appId=301124913339612";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
     <link href="/css/bootstrap.css" rel="stylesheet" media="screen">
      <link rel='stylesheet' href='/stylesheets/style.css' />
       <link rel='stylesheet' href='/stylesheets/mystyle.css' />
@@ -24,6 +32,9 @@
             </p> -->
             <ul class="nav pull-right">
             <!--  <li class="active"><a href="#">Home</a></li>-->
+             <form id="searchbar" action="/search" method="get" >
+                   <input type="text" data-provide="typeahead" name='keyword'>
+                   </form>
                 <li ><a href="#about">About</a></li>
                 <li ><a href="#contact">Contact</a></li>
 
