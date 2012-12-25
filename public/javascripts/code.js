@@ -36,10 +36,10 @@ function changeDirection(dir){
    direction = dir;
 };
 
-$('#commentbut').click(function() {
-	$('.fb-comments').hide();
-	var currentpic=$('.active').attr('id');
-	//alert(currentpic);
-	$('.'+currentpic).show();
+// $('#commentbut').click(function() {
+// 	$('.fb-comments').hide();
+// 	var currentpic=$('.active').attr('id');
+// 	//alert(currentpic);
+// 	$('.'+currentpic).show();
 	
-});
+// });

@@ -7,8 +7,13 @@
      <link rel='stylesheet' href='/stylesheets/mystyle.css' />
      <link rel='stylesheet' href='/stylesheets/style.css' />
      <link href='http://fonts.googleapis.com/css?family=Rancho' rel='stylesheet' type='text/css'>
+     <script type="text/javascript" src="../javascripts/highslide/highslide-with-html.packed.js"></script>
+<link rel="stylesheet" type="text/css" href="../javascripts/highslide/highslide.css" /> 
+<script type="text/javascript"> hs.graphicsDir = '../javascripts/highslide/graphics/'; hs.showCredits = false; hs.outlineType = 'rounded-white';
+  hs.wrapperClassName = 'draggable-header'; </script>
     <div id="fb-root"></div>
 <div id="fb-root"></div>
+
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -70,7 +75,10 @@
 <!--     <div class="fb-comments" data-href="http://localhost:3000/topic/<%=topic%>" data-width="680" data-num-posts="4"></div> -->
 
 </div>
-<button id ='commentbut'>顯示留言!</button>
+<!-- <a id ='commentbut' href="index.htm" onclick="return hs.htmlExpand(this, { headingText: 'Lorem ipsum' })">
+  Open HTML-content
+</a> -->
+<!-- <button id ='commentbut'>顯示留言!</button> -->
  <div id ='comment'>
       <% for (var k=0;k < piclist.length;k++){ %>
       <div style="display:none;"  class="fb-comments <%=k%>" data-href='http://localhost:3000/upload/<%= piclist[k].picurl %> ' data-width="680" data-num-posts="4"></div>
@@ -79,12 +87,16 @@
 
 </div>
 </div>
+  
 
   <script type="text/javascript" src="../javascripts/jquery.min.js">  ​</script>
   <script type="text/javascript" src="../javascripts/jquery-ui.min.js"> </script>
   <script type="text/javascript" src="../javascripts/code.js"></script>
   <script type="text/javascript" src="../javascripts/bootstrap.js"></script>
   <script type="text/javascript" src="../javascripts/jquery.waterwheelCarousel.js"></script>
+
+
+
   <script type="text/javascript">
       $(document).ready(function () {
         $("#waterwheel-carousel-default").waterwheelCarousel();
@@ -99,7 +111,15 @@
             flankingItems:1,
             itemDecreaseFactor:1,
             centerOffset: 10 , 
-            edgeReaction: 'nothing' 
+            edgeReaction: 'nothing' ,
+            movedToCenter: function($clickedItem) {
+      // $clickedItem is a jQuery wrapped object describing the image that was clicked.
+            var imageUrl = $clickedItem.attr('id');
+            //alert('The center image was just clicked. The id of the image is: ' + imageUrl);
+              $('.fb-comments').hide();
+               $('.'+imageUrl).show();
+          },
+
         });
 
       });

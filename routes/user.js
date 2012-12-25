@@ -4,7 +4,7 @@
  */
  var database = {};
  var prefix ="C:\\Users\\asus\\Nextdraw\\public\\upload"
-	,mongoose = require('mongoose');
+ 	,mongoose = require('mongoose');
 	//,$=require('jquery');
 
   var piclist = require('../models/model');
@@ -50,7 +50,7 @@ exports.topic=function(req, res, next) {
      // console.log(docs);
 	});
 
-	
+
  
   }
 exports.upload=function(req, res, next) {
@@ -93,8 +93,9 @@ exports.upload=function(req, res, next) {
 		console.log(docs);
 		});
       		
-	 	
+
 		res.redirect('/topic/' + req.params['id'] );
+}
 exports.search=function(req,res,next){
 	 	console.log(req.query.keyword)
 	 	var result=new Array();
@@ -110,7 +111,7 @@ exports.search=function(req,res,next){
 	 	})
 
 
-// 	}
+	}
 	exports.newtopic=function(req,res,next){
 		res.render('newtopic',{});
 
@@ -132,7 +133,7 @@ exports.search=function(req,res,next){
 							  	    	picurl:req.files.file.path.replace(prefix,'')
 							          }]
 							         });
-		
+
 		topic_new.save(function(err){
 			if (err) throw err
 		});
