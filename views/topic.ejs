@@ -29,11 +29,7 @@
           </a>
           <a class="brand" href="/">NextDraw</a>
           <div class="nav-collapse collapse">
-          <!--   <p class="navbar-text pull-right">
-              
-            </p> -->
             <ul class="nav pull-right">
-            <!--  <li class="active"><a href="#">Home</a></li>-->
                 <li ><a href="#about">About</a></li>
                 <li ><a href="#contact">Contact</a></li>
 
@@ -46,55 +42,24 @@
   
 <div class="container margintop">
 <div class="row">
-  <div >
   <h2 class="offset1 well shadowbox"><%=topic%>
   <div class="fb-like" data-href="http://localhost:3000/topic/<%=topic%>" data-send="true" data-width="450" data-show-faces="true" data-font="arial"></div>
   
   </div>
     <div class ="well offset1" id="waterwheel-carousel-vertical">
       <div class="carousel-controls">
-<!--         <div class="carousel-prev"><a href="#">&lt; move down</a></div>
-        <div class="carousel-next"><a href="#">&gt; move up</a></div> -->
       </div>
       <div class="carousel-images">
            <% for (var k=0;k < piclist.length;k++){ %>
 
-              <img href="#myModal" src ='/upload/<%= piclist[k].picurl %> ' data-toggle="modal" class='userpicture'></img>
+              <img href="#myModal" id='<%=k%>' src ='/upload/<%= piclist[k].picurl %> ' data-toggle="modal" class='userpicture'></img>
               <br>
              
                <% } %>
 
       </div>
     </div>
-<!--   <i class="icon-arrow-up btntop" id="leftDir"></i>
-    <div id="scrollbox">
-      <div class="scrollcon">
-        <div id="boximg" class="scrollpic">
-<<<<<<< HEAD
-          <ul> -->
-             <!--  <% piclist.forEach(function(pic){ %>
-              <img href="#myModal" src ='/upload/<%= pic.picurl %> ' data-toggle="modal"></img>
-              <br>
-              
-               <% }) %> -->
-<!--              
-=======
-          <ul>
-              <% for (var k=0;k < piclist.length;k++){ %>
-              <li><img src ='/upload/<%= piclist[k].picurl %> '></img><br />
-              </li>
-    
-              <br>
-               <% } %>
-       
->>>>>>> f4b603689b0d9958ebfa5a0c7374642af4258fa9
-          </ul>
-        </div>
-      </div>
-    </div>
 
-<i class="icon-arrow-down btnbottom" id="rightDir"></i>
-</div> -->
 <div class=' offset1'>
   <form method='post' action='/upload/<%= topic%>' ENCTYPE="multipart/form-data"  >
     <input type="file" name="file" id="file0" multiple="multiple" /><br>
@@ -102,21 +67,25 @@
     <input type='text' name='picdescription' placeholder='description' />
       <button>送出</button>
     </form>
-    <div class="fb-comments" data-href="http://localhost:3000/topic/<%=topic%>" data-width="680" data-num-posts="4"></div
+<!--     <div class="fb-comments" data-href="http://localhost:3000/topic/<%=topic%>" data-width="680" data-num-posts="4"></div> -->
+
+</div>
+<button id ='commentbut'>顯示留言!</button>
+ <div id ='comment'>
+      <% for (var k=0;k < piclist.length;k++){ %>
+      <div style="display:none;"  class="fb-comments <%=k%>" data-href='http://localhost:3000/upload/<%= piclist[k].picurl %> ' data-width="680" data-num-posts="4"></div>
+               <% } %>
+  </div>
+
 </div>
 </div>
-<!-- Button to trigger modal -->
- 
-<!-- Modal -->
-
-
 
   <script type="text/javascript" src="../javascripts/jquery.min.js">  ​</script>
   <script type="text/javascript" src="../javascripts/jquery-ui.min.js"> </script>
   <script type="text/javascript" src="../javascripts/code.js"></script>
-      <script type="text/javascript" src="../javascripts/bootstrap.js"></script>
-      <script type="text/javascript" src="../javascripts/jquery.waterwheelCarousel.js"></script>
-       <script type="text/javascript">
+  <script type="text/javascript" src="../javascripts/bootstrap.js"></script>
+  <script type="text/javascript" src="../javascripts/jquery.waterwheelCarousel.js"></script>
+  <script type="text/javascript">
       $(document).ready(function () {
         $("#waterwheel-carousel-default").waterwheelCarousel();
         
@@ -130,12 +99,11 @@
             flankingItems:1,
             itemDecreaseFactor:1,
             centerOffset: 10 , 
-             edgeReaction: 'nothing' 
+            edgeReaction: 'nothing' 
         });
 
       });
-    </script>
-      <script>  
+  
   /**
    * 使用HTML5 File API, 來即時預覽image
    */
@@ -161,11 +129,8 @@
       url = window.webkitURL.createObjectURL(file) ;
     }
     return url ;
-  }
-
-  
-  
-  
+  };
+    
   </script>
   </body>
 </html>

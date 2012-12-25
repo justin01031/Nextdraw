@@ -35,20 +35,11 @@ function marquee(){
 function changeDirection(dir){
    direction = dir;
 };
-// $('.active').each(function(){ 
-//     // if ($('img').css('z-index') === '3') {
-//     // 	$(this).addClass("hide");
-        
-//     // }
 
-//    }
-// )
-
-// tab.onmouseover = function(){clearInterval(timer);};
-//tab.onmouseout = function(){timer = setInterval(marquee,speed);};
- // $('<div>').addClass('span5 well').text(ggg.name).appendTo($('#group'));
- 
- // $('.active').on('click', function(e){
- //    comment('yo');
-
- //  });
+$('#commentbut').click(function() {
+	$('.fb-comments').hide();
+	var currentpic=$('.active').attr('id');
+	//alert(currentpic);
+	$('.'+currentpic).show();
+	
+});
