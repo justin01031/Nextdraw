@@ -83,3 +83,28 @@ body{
 	width:500px;
 
 }
+
+    .cover_div{  
+        float:left;  
+        width:270px;  
+    }  
+    .fake_input{  
+        float:left;  
+        width:135px;  
+        margin:0 5px 0 0;  
+    }  
+    .hide_input{  
+        border:1px solid red;  
+        margin:0px 0 0 -267px;  
+        margin:0px 0 0 -267px9;  
+        float:left;  
+        height:30px;  
+        opacity:0;  
+        filter:alpha(opacity=0);  
+        width:220px9;  
+    }  
+   
+       
+    .clear{  
+        clear:both;  
+    }  

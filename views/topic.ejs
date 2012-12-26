@@ -75,7 +75,13 @@
 
 <div class=' offset1'>
   <form method='post' action='/upload/<%= topic%>' ENCTYPE="multipart/form-data"  >
-    <input type="file" name="file" id="file0" multiple="multiple" /><br>
+      <div class="cover_div">
+    <input type="text" id="fileName" class="fake_input" /><a href="#" class="btn btn-primary" >點我</a>
+    <div class="clear"></div>
+  </div>
+  <input type="file" name="file" id="file0" class="hide_input" onchange="setText(this,'fileName');">
+    <!-- <input type="file" name="file" id="file0" multiple="multiple" /><br> -->
+
     <img src="" id="img0" width="200px" >
     <input type='text' name='picdescription' placeholder='description' />
       <button>送出</button>
@@ -154,7 +160,10 @@
     }
     return url ;
   };
-    
+    function setText(ob,name){  
+    document.getElementById(name).value=ob.value;;  
+}  
   </script>
+ 
   </body>
 </html>
