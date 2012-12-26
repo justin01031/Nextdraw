@@ -67,7 +67,7 @@ body{
 /*	調整右邊視窗大小*/
 	overflow:auto;
 	width:300px;
-		height:400px;
+		height:542px;
 	margin-left: 550px;
 }
 .scrollpic li img{float:left;margin:0 10px 0 0;}
@@ -82,6 +82,7 @@ body{
 }
 #waterwheel-carousel-vertical{
 	width:500px;
+	position: absolute;
 
 }
 
