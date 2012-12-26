@@ -51,7 +51,11 @@
       <li class="span3 thumbnail shadowbox" >
      
        <a id="hide thumb1" href="/upload/<%= result[k].content[0].picurl %>" class="highslide " onclick="return hs.expand(this)"> 
-        <img src="/upload/<%= result[k].content[0].picurl %>" id="hide" alt="Highslide JS"class="animateMe" title="Click to enlarge" width="280" height="220"></a>
+        <div style="width:280px;  height:220px;  overflow:hidden;">
+          <div style = "margin:-25px 0 0 0;">
+            <img src="/upload/<%= result[k].content[0].picurl %>" id="hide" alt="Highslide JS"class="animateMe" title="Click to enlarge"></a>
+          </div>
+        </div>
         <a href="/topic/<%=result[k].topic %>" class ="title"><h3><%= result[k].topic%></h3></a>
       <p>post by justinQQ</p>
      
@@ -63,6 +67,12 @@
   <script type="text/javascript" src="./javascripts/jquery-ui.min.js"> </script>
   <script type="text/javascript" src="./javascripts/code.js"></script>
     <script type="text/javascript" src="./javascripts/bootstrap.js"></script>
+    <!— 圖片放特效 —>
+<script type="text/javascript" src="./javascripts/highslide/highslide.packed.js"></script>
+<script type="text/javascript" src="./javascripts/highslide/highslide-with-html.packed.js"></script>
+<link rel="stylesheet" type="text/css" href="./javascripts/highslide/highslide.css" /> 
+<script type="text/javascript"> hs.graphicsDir = './javascripts/highslide/graphics/'; hs.showCredits = false; hs.outlineType = 'rounded-white'; hs.outlineWhileAnimating = true; </script>
+<!— 圖片放特效 結束 —>
 
   </body>
 </html>
