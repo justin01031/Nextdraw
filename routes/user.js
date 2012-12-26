@@ -8,14 +8,15 @@
 	//,$=require('jquery');
 
   var piclist = require('../models/model');
-  mongoose.connect('localhost','test');//ned link to mongodb
-
+  // mongoose.connect("mongodb://user:user@ds045897.mongolab.com:45897/pictopiclist");//ned link to mongodb
+  mongoose.connect('localhost',"test");
 var request = require('request'),
 $ = require('jQuery');
 
 // var title;
 
 piclist.find().exec(function(err,docs){console.log(docs)});	
+
 exports.index_topic = function(req, res){
   piclist.find().exec(function(err,docs){
   	if (err) throw err 
