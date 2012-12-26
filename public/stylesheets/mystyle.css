@@ -67,7 +67,7 @@ body{
 /*	調整右邊視窗大小*/
 	overflow:auto;
 	width:300px;
-		height:542px;
+		height:547px;
 	margin-left: 550px;
 }
 .scrollpic li img{float:left;margin:0 10px 0 0;}
