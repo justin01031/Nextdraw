@@ -81,13 +81,11 @@
      
        <a id="hide thumb1" href="/upload/<%= topics[k].content[0].picurl %>" class="highslide " onclick="return hs.expand(this)"> 
         <div style="width:280px;  height:220px;  overflow:hidden;">
-          <div style = "margin:-25px 0 0 0;">
-            <img src="/upload/<%= topics[k].content[0].picurl %>" id="hide" alt="Highslide JS" class="animateMe" title="Click to enlarge">
-          </div>
+          <img src="/upload/<%= topics[k].content[0].picurl %>" id="hide" alt="Highslide JS" class="animateMe" title="Click to enlarge">
         </div>
        </a>
         <a href="/topic/<%=topics[k].topic %>" class ="title"><h3><%= topics[k].topic%></h3></a>
-      <p>post by justinQQ</p>
+      <p><%=topics[k].description%></p>
      
       </li>
        <% i++} %>

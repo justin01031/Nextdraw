@@ -46,7 +46,7 @@ exports.topic=function(req, res, next) {
       return;
     }
    	
-    res.render('topic',{piclist:docs.content, topic:req.params['id']})
+    res.render('topic',{piclist:docs.content, topic:req.params['id'], description:docs.description})
 	});
 
 
