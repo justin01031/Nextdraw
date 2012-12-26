@@ -3,7 +3,10 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 a {
-  color: #525252;
+  color: #00005A;
+}
+a:hover {
+	color: #818181;
 }
 .cover_photo{
 	margin-top: 50px;
