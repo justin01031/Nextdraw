@@ -10,6 +10,7 @@ var piclist = module.exports =mongoose.model('pic',schema);
 for (var i = 0 ; i < 3 ;i++)
 {
 var pic_default = new piclist({topic:"today" + i,
+								description:"hello",
 							  content:[{picdescription:"test" + i,
 							  	picurl:"test" + i + ".jpg"
 							   }]
