@@ -3,7 +3,7 @@
  * GET users listing.
  */
  var database = {};
- 
+
  var prefix = "/app/public/upload/"
  //var prefix ="\\app\\public\\upload\\"
  //var prefix ="C:\\Users\\George\\Desktop\\Nextdraw\\public\\upload"
@@ -127,7 +127,7 @@ exports.search=function(req,res,next){
 		var topic_new = new piclist({topic:req.body.topic
 									 ,category:req.body.category
                                      ,description:req.body.description
-							  	     ,content:[{picdescription:"head",
+							  	     ,content:[{picdescription:"",
 							  	    	picurl:req.files.file.path.replace(prefix,'')
 							          }]
 							         });
