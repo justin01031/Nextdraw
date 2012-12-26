@@ -3,5 +3,9 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 a {
-  color: #00B7FF;
+  color: #525252;
+}
+.cover_photo{
+	margin-top: 50px;
+	margin-bottom: 50px;
 }
