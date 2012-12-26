@@ -75,23 +75,30 @@
   </div>
     </div>
     
-
-<div class=' offset1'>
+<hr>
+<div class='  '>
   <form method='post' action='/upload/<%= topic%>' ENCTYPE="multipart/form-data"  >
       <div class="cover_div">
+<!-- <<<<<<< HEAD
     <button href="#" class="btn btn-danger" >上傳檔案</button>
+======= -->
+    <button href="#" class="btn btn-danger" >上傳檔案</button>
+<!-- >>>>>>> dd2d7daa1b378b5807acc8cbd43b7e428ae46f58 -->
     <div class="clear"></div>
   </div>
   <input type="file" name="file" id="file0" class="hide_input" >
     <!-- <input type="file" name="file" id="file0" multiple="multiple" /><br> -->
 
-    <img src="" id="img0" width="200px" >
+   
     <input type='text' name='picdescription' placeholder='description' />
       <button>送出</button>
+      <br>
+       <img src="" id="img0" width="200px" >
     </form>
-    <div class="fb-comments" data-href="http://localhost:3000/topic/<%=topic%>" data-width="680" data-num-posts="4"></div>
+   
 
 </div>
+ <div class="fb-comments" data-href="http://localhost:3000/topic/<%=topic%>" data-width="680" data-num-posts="4"></div>
 <!-- <a id ='commentbut' href="index.htm" onclick="return hs.htmlExpand(this, { headingText: 'Lorem ipsum' })">
   Open HTML-content
 </a> -->

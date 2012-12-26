@@ -58,7 +58,26 @@
       </div>
   <div id="content">
     <ul class="thumbnails thumbnailscenter">
-       <% for (var k=0;k < 3;k++){ %>
+       <% 
+          var pre=new Array(),count=0;
+          for (var i=0;i < 3;){ 
+          var k=Math.floor(Math.random()*topics.length);
+          var flag = false;
+          for(var j=0;j < pre.length;j++)
+            {
+             if(pre[j] == k)
+              {
+               flag = true;
+               break;
+              }
+            console.log(pre[j]);    
+            }
+          if(flag)
+            continue;
+
+            pre[count]=k;
+            count++; 
+        %>
       <li class="span3 thumbnail shadowbox" >
      
        <a id="hide thumb1" href="/upload/<%= topics[k].content[0].picurl %>" class="highslide " onclick="return hs.expand(this)"> 
@@ -67,7 +86,7 @@
       <p>post by justinQQ</p>
      
       </li>
-       <% } %>
+       <% i++} %>
 <!--       <li class="span3 thumbnail shadowbox" >
      
        <a id="hide thumb1" href="/upload/test.jpg" class="highslide " onclick="return hs.expand(this)"> 
