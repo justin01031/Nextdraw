@@ -46,7 +46,7 @@ var piclist = module.exports =mongoose.model('pic',schema);
 // 							  	picurl:"test2.jpg"
 // 							   }]
 // 							  });
-pic_default.save(function(err)
-      	{
-        if (err) throw err
-      	});		
+// pic_default.save(function(err)
+//       	{
+//         if (err) throw err
+//       	});		
