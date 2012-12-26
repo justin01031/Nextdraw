@@ -8,7 +8,8 @@
 	//,$=require('jquery');
 
   var piclist = require('../models/model');
-  mongoose.connect('localhost','test');//ned link to mongodb
+  // mongoose.connect('localhost','test');//ned link to mongodb
+  mongoose.connect('mongodb://justin01031:justin01031@ds045897.mongolab.com:45897/nextdraw')
 
 var request = require('request'),
 $ = require('jQuery');
