@@ -108,3 +108,7 @@ body{
     .clear{  
         clear:both;  
     }  
+hr{
+	border-top: 1px solid #DD4814;
+border-bottom: 1px solid #DD4814;
+}

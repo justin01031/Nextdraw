@@ -66,8 +66,11 @@
       </div>
       <div class='well shadowbox commentbox'id ='comment'>
       <% for (var k=0;k < piclist.length;k++){ %>
-      
-      <div style="display:none;"  class="fb-comments <%=k%>" data-href='http://localhost:3000/upload/<%= piclist[k].picurl %> ' data-width="300" data-num-posts="4"></div>
+      <div class="<%=k%> comment" style="display:none;" >
+        <h4 class="text-error "><%=piclist[k].picdescription %></h4> 
+          <hr />
+          <div  class="fb-comments" data-href='http://localhost:3000/upload/<%= piclist[k].picurl %> ' data-width="300" data-num-posts="4"></div>
+      </div>
                <% } %>
   </div>
     </div>
@@ -76,7 +79,7 @@
 <div class=' offset1'>
   <form method='post' action='/upload/<%= topic%>' ENCTYPE="multipart/form-data"  >
       <div class="cover_div">
-    <input type="text" id="fileName" class="fake_input" /><a href="#" class="btn btn-primary" >點我</a>
+    <input type="text" id="fileName" class="fake_input" /><button href="#" class="btn btn-danger" >點我</button>
     <div class="clear"></div>
   </div>
   <input type="file" name="file" id="file0" class="hide_input" onchange="setText(this,'fileName');">
@@ -126,7 +129,7 @@
       // $clickedItem is a jQuery wrapped object describing the image that was clicked.
             var imageUrl = $clickedItem.attr('id');
             //alert('The center image was just clicked. The id of the image is: ' + imageUrl);
-              $('.fb-comments').hide();
+              $('.comment').hide();
                $('.'+imageUrl).show();
           },
 
