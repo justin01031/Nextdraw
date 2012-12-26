@@ -56,6 +56,7 @@ exports.topic=function(req, res, next) {
 exports.upload=function(req, res, next) {
 	// console.log(req.files.file.name);
 	 	if(req.files.file.name=='') throw new Error('no pitcure');
+	 	alert(req.files.file.path);
 		database[req.files.file.path.replace(prefix,'')] = {
 	 			title : req.body.title
 	 	};
