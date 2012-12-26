@@ -48,7 +48,7 @@
       </div>
     </div>
   
-<div class="container margintop">
+<div class="container">
 
   <h2 class=" well shadowbox "><%=topic%>
   <div class="fb-like" data-href="http://localhost:3000/topic/<%=topic%>" data-send="true" data-width="450" data-show-faces="true" data-font="arial"></div></h2>
@@ -64,7 +64,8 @@
                <% } %>
 
       </div>
-      <div class='well shadowbox commentbox'id ='comment'>
+    </div>
+    <div class='well shadowbox commentbox'id ='comment'>
       <% for (var k=0;k < piclist.length;k++){ %>
       <div class="<%=k%> comment" style="display:none;" >
         <h4 class="text-error "><%=piclist[k].picdescription %></h4> 
@@ -73,9 +74,8 @@
       </div>
                <% } %>
   </div>
-    </div>
     
-<hr>
+
 <div class='  '>
   <form method='post' action='/upload/<%= topic%>' ENCTYPE="multipart/form-data"  >
       <div class="cover_div">
@@ -96,7 +96,7 @@
        <img src="" id="img0" width="200px" >
     </form>
    
-
+<hr>
 </div>
  <div class="fb-comments" data-href="http://localhost:3000/topic/<%=topic%>" data-width="680" data-num-posts="4"></div>
 <!-- <a id ='commentbut' href="index.htm" onclick="return hs.htmlExpand(this, { headingText: 'Lorem ipsum' })">
