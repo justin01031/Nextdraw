@@ -3,7 +3,7 @@
  * GET users listing.
  */
  var database = {};
- var prefix = "\\app\\public\\upload\\",
+ var prefix = "\\app\\public\\upload\\"
  //var prefix ="\\app\\public\\upload\\"
  //var prefix ="C:\\Users\\George\\Desktop\\Nextdraw\\public\\upload"
  	,mongoose = require('mongoose');
