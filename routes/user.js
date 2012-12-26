@@ -3,17 +3,17 @@
  * GET users listing.
  */
  var database = {};
- var prefix ="C:\\Users\\asus\\Nextdraw\\public\\upload"
+ var prefix ="C:\\Users\\George\\Desktop\\Nextdraw\\public\\upload"
  	,mongoose = require('mongoose');
 	//,$=require('jquery');
 
   var piclist = require('../models/model');
-  // mongoose.connect("mongodb://user:user@ds045897.mongolab.com:45897/pictopiclist");//ned link to mongodb
-  mongoose.connect('localhost',"test");
+
+  mongoose.connect('mongodb://justin01031:justin01031@ds045897.mongolab.com:45897/nextdraw')
+
 var request = require('request'),
 $ = require('jQuery');
 
-// var title;
 
 piclist.find().exec(function(err,docs){console.log(docs)});	
 
@@ -28,15 +28,10 @@ exports.index_topic = function(req, res){
 exports.list = function(req, res){
   res.send("respond with a resource");
 };
-// exports.search = function(req, res){
-// 	res.send("hello");
-// }
+
 piclist.remove(function(err){if (err) throw err})
 
-// exports.topic_chosen=function(req, res, next){
-// 	console.log(req.body);
-// 	title=req.body.title;
-// }	
+
 exports.topic=function(req, res, next) {
 	console.log(req.params['id']);
 	console.log('hihi');
@@ -48,7 +43,6 @@ exports.topic=function(req, res, next) {
     }
    	
     res.render('topic',{piclist:docs.content, topic:req.params['id']})
-     // console.log(docs);
 	});
 
 
@@ -62,10 +56,7 @@ exports.upload=function(req, res, next) {
 	 	};
 
 	 	console.log(database);
-// <<<<<<< HEAD
-// 		var pic_new = new piclist(
-//                                  {title:"test1" ,
-// =======
+
 		var pic_new = new Object({picdescription:req.body.picdescription ,
                                   picurl:req.files.file.path.replace(prefix,'')
                                   });
@@ -82,8 +73,6 @@ exports.upload=function(req, res, next) {
     		var pic_old = new Object({picdescription:docs.content[i].picdescription, picurl:docs.content[i].picurl});
     		console.log(pic_old);
     		temp_array.push(pic_old);
-    		//console.log(docs.content[i]);
-
     	}
       	temp_array.push(pic_new);
 		docs.content = temp_array;
